@@ -53,17 +53,17 @@ PROJECT_DESCRIPTION = (
 # File Paths
 # ==========================================================
 
-BASE_FOLDER = r"D:\Machine Learning\Diabetes"
+import os
+import joblib
 
-MODEL_PATH = os.path.join(
-    BASE_FOLDER,
-    "diabetes_xgboost_model.pkl"
-)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-SCALER_PATH = os.path.join(
-    BASE_FOLDER,
-    "diabetes_scaler.pkl"
-)
+MODEL_PATH = os.path.join(BASE_DIR, "diabetes_xgboost_model.pkl")
+SCALER_PATH = os.path.join(BASE_DIR, "diabetes_scaler.pkl")
+
+model = joblib.load(MODEL_PATH)
+scaler = joblib.load(SCALER_PATH)
+
 
 LOGO_PATH = os.path.join(
     BASE_FOLDER,
