@@ -1,15 +1,13 @@
+import streamlit as st
+import pandas as pd
+import joblib
 from pathlib import Path
-import shutil
-import zipfile
 
-source = Path("/mnt/data/App_fixed.py")
-app = Path("/mnt/data/App.py")
-requirements = Path("/mnt/data/requirements.txt")
-readme = Path("/mnt/data/README.md")
-zip_path = Path("/mnt/data/diabetes-risk-prediction-deployment.zip")
-
-# Copy the clean Streamlit application.
-shutil.copyfile(source, app)
+st.set_page_config(
+    page_title="Diabetes Risk Prediction",
+    page_icon="🩺",
+    layout="centered",
+)
 
 requirements.write_text(
     "\n".join(
